@@ -1,0 +1,19 @@
+replicas: 3
+
+image:
+  repository: arjunnigam/mymaps
+  tag: latest
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 30036
+
+app:
+  name: unimap
+
+configMap:
+  name: mapbox-config
+  data:
+    MAPBOX_ACCESS_TOKEN: "pk.eyJ1Ijoic2t5bGFyLTAwNzEiLCJhIjoiY2x2bGtxOWJqMmN3ZzJtbDlvbDZia2R1YyJ9.HnrQGtU8_8U7l--OYXeksQ"
